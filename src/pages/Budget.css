@@ -1,0 +1,249 @@
+.budget-page {
+  max-width: 48rem;
+  width: 100%;
+}
+
+.budget-page__header {
+  margin-bottom: 2rem;
+}
+
+.budget-card {
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.budget-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.budget-card__main-amt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.budget-card__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.budget-card__amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.budget-card__edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-subtle);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.budget-card__edit-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.budget-edit-form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.budget-edit-form__input {
+  width: 150px;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.budget-edit-form__input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+}
+
+.budget-edit-form__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.budget-edit-form__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.budget-edit-form__btn--save {
+  background: var(--success);
+  color: #fff;
+}
+
+.budget-edit-form__btn--save:hover {
+  background: var(--accent-hover);
+}
+
+.budget-edit-form__btn--cancel {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border-color: var(--border);
+}
+
+.budget-edit-form__btn--cancel:hover {
+  background: var(--border);
+  color: var(--text-primary);
+}
+
+.budget-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.budget-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.budget-stat__label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.budget-stat__value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.budget-stat__value--negative {
+  color: var(--danger);
+}
+
+.budget-progress {
+  margin-top: 1.5rem;
+}
+
+.budget-progress__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.budget-progress__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.budget-progress__pct {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.budget-progress__bar {
+  height: 0.75rem;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.budget-progress__fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s ease-out, background-color 0.3s ease;
+}
+
+.budget-progress__fill--safe {
+  background-color: var(--success);
+}
+
+.budget-progress__fill--warning {
+  background-color: var(--warning);
+}
+
+.budget-progress__fill--danger {
+  background-color: var(--danger);
+}
+
+.recurring-section {
+  margin-top: 2.5rem;
+}
+
+.recurring-section__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.recurring-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recurring-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.recurring-summary__label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.recurring-summary__value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--danger);
+}

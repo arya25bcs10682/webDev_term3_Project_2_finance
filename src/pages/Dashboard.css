@@ -1,0 +1,246 @@
+.dashboard-page {
+  width: 100%;
+}
+
+.dashboard-page__header {
+  margin-bottom: 2rem;
+}
+
+/* ── Summary Cards ─────────────────────────────────────── */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  gap: 0.5rem;
+}
+
+.summary-card__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.summary-card__sublabel {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.summary-card__value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.summary-card__value--income {
+  color: var(--success);
+}
+
+.summary-card__value--expense {
+  color: var(--danger);
+}
+
+.summary-card__value--text {
+  font-size: 1.25rem;
+  margin-top: auto;
+}
+
+/* Monthly Income card: value + icon side by side */
+.summary-card__value-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Dashboard Charts (expense row) ───────────────────── */
+.dashboard-charts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-charts {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.dashboard-chart-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.dashboard-chart-card__title {
+  margin: 0 0 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dashboard-chart-card__wrapper {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Taller wrapper for income breakdown chart */
+.dashboard-chart-card__wrapper--tall {
+  height: 360px;
+}
+
+.dashboard-chart-card__empty {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+/* ── Monthly Income Breakdown Section ─────────────────── */
+.dashboard-income-section {
+  margin-bottom: 0;
+}
+
+.income-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Month Selector */
+.month-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.25rem;
+}
+
+.month-selector__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1.125rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.month-selector__arrow:hover:not(:disabled) {
+  background: var(--bg-hover);
+}
+
+.month-selector__arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.month-selector__label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 130px;
+  text-align: center;
+  padding: 0 0.25rem;
+}
+
+/* Income Tabs (segmented control) */
+.income-tabs {
+  display: flex;
+  background: var(--border);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.income-tab {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  text-align: center;
+}
+
+.income-tab--active {
+  background: var(--bg-card);
+  color: var(--accent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Empty state */
+.income-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
+  width: 100%;
+  color: var(--text-muted);
+}
+
+.income-empty__icon {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.income-empty__text {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── Tooltips ─────────────────────────────────────────── */
+.custom-tooltip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.custom-tooltip__label {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-primary);
+}
